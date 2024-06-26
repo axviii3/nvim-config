@@ -22,10 +22,10 @@ _G.nmap = function(...)
 end
 
 -- emulate actual key presses
---_G.emulate_keys = function(keys, mode)
---	vim.api.nvim_feedkeys(
---		vim.api.nvim_replace_termcodes(keys, true, true, true),
---		mode,
---		false
---	);
---end
+_G.emulate_keys = function(keys, mode)
+	vim.api.nvim_feedkeys(
+		vim.api.nvim_replace_termcodes(keys, true, true, true),
+		mode,
+		false
+	);
+end

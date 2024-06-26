@@ -26,3 +26,9 @@ map({ "n", "v" }, "<leader>y", "\"+y");                                       --
 nmap("<leader>Y", "\"+Y");                                                    -- yank line to clipboard
 map({ "n", "v" }, "<leader>d", "\"_d");                                       -- delete without copying
 nmap("<leader>D", "\"_D");                                                    -- delete till the end of the line without copying
+
+-- substitutions
+nmap("<leader>sw", ":" .. custom_commands["SubstituteWordQuick"] .. "<CR>");
+nmap("<leader>sW", ":" .. custom_commands["SubstituteWord"] .. "<CR>");
+nmap("<leader>ss", ":" .. custom_commands["SubstituteCharsQuick"] .. "<CR>");
+nmap("<leader>sS", ":" .. custom_commands["SubstituteChars"] .. "<CR>");

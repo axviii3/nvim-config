@@ -14,7 +14,7 @@ end
 local is_netrw_open_sidebar = false;
 
 create_command(
-	"NetrwSidebarToggle",
+	"NetrwSidebarToggle",                                                     -- toggle sidebar file explorer
 	function()
 		if vim.bo.filetype == "netrw" and not is_netrw_open_sidebar then
 			return;
@@ -36,7 +36,7 @@ create_command(
 );
 
 create_command(
-	"NetrwFullToggle",
+	"NetrwFullToggle",                                                        -- toggle fullscreen file explorer
 	function()
 		if is_netrw_open_sidebar then
 			vim.cmd(custom_commands.NetrwFullToggle);                         -- close (toggle) sidebar if open
@@ -47,6 +47,108 @@ create_command(
 		else
 			vim.cmd("Explore %:p:h");                                         -- %:p:h for current directory
 		end
+	end,
+	{}
+);
+
+-- substitutions
+create_command(
+	"SubstituteWordQuick",                                                    -- subsitute all instances of the word under the cursor
+	function()                                                                -- only substitutes the word if it is by itself
+		vim.ui.input(
+			{ prompt = "Enter the substitution: " },
+			function(input)
+				if not input or input == "" then
+					return;
+				end
+
+				emulate_keys(
+					":%s/\\<<C-r><C-w>\\>/" .. input .. "/gI<CR>",
+					"n"
+				);
+			end
+		);
+	end,
+	{}
+);
+
+create_command(
+	"SubstituteWord",                                                         -- substitute all instances of the word inputted
+	function()
+		vim.ui.input(
+			{ prompt = "Enter the target: " },
+			function(target)
+				if not target or target == "" then
+					return;
+				end
+
+				vim.ui.input(
+					{ prompt = "Enter the substitution: " },
+					function(substitution)
+						if not substitution or substitution == "" then
+							return;
+						end
+
+						emulate_keys(
+							":%s/\\<" .. target .. "\\>/" .. substitution ..
+							"/gI<CR>",
+							"n"
+						);
+					end
+				);
+			end
+		);
+	end,
+	{}
+);
+
+create_command(
+	"SubstituteCharsQuick",                                                   -- substitute all instances of the sequence of characters under cursor
+	function()                                                                -- substitutes the sequence even if it is surrounded by other characters
+		vim.ui.input(
+			{ prompt = "Enter the substitution: " },
+			function(input)
+				if not input or input == "" then
+					return;
+				end
+
+				emulate_keys(
+					":%s/<C-r><C-w>/" .. input .. "/gI<CR>",
+					"n"
+				);
+			end
+		);
+	end,
+	{}
+);
+
+
+create_command(
+	"SubstituteChars",                                                        -- substitute all instances of the sequence of characters inputted
+	function()
+		vim.ui.input(
+			{ prompt = "Enter the target: " },
+			function(target)
+				if not target or target == "" then
+					return;
+				end
+
+				vim.ui.input(
+					{ prompt = "Enter the substitution: " },
+					function(substitution)
+						if not substitution or substitution == "" then
+							return;
+						end
+
+						emulate_keys(
+							":%s/" .. target .. "/" .. substitution ..
+							"/gI<CR>",
+							"n"
+						);
+					end
+				);
+			end
+		);
 	end,
 	{}
 );
