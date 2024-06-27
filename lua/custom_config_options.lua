@@ -13,6 +13,16 @@ return {
 	initial_tab_length = 4,
 
 	-- plugin config
+	lsp_setup = {
+		lua_ls = {
+			settings = {
+				Lua = {
+					callSnippet = "Replace"
+				}
+			}
+		},
+		tsserver = {}
+	},
 	cloak_patterns = {
 		file_pattern = {
 			"*.env",
@@ -25,14 +35,5 @@ return {
 		},
 		replace = nil
 	},
-	lsp_setup = {
-		lua_ls = {
-			settings = {
-				Lua = {
-					callSnippet = "Replace"
-				}
-			}
-		},
-		tsserver = {}
-	}
+	is_yarn_installed = true
 };

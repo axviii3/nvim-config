@@ -13,17 +13,6 @@ return {
 	initial_tab_length = 2,
 
 	-- plugin config
-	cloak_patterns = {
-		file_pattern = {
-			"*.env",
-			".env*",
-		},
-		cloak_pattern = {
-			"=.+",
-			":.+"
-		},
-		replace = nil
-	},
 	lsp_setup = {
 		lua_ls = {
 			settings = {
@@ -32,5 +21,11 @@ return {
 				}
 			}
 		}
-	}
+	},
+	cloak_patterns = {
+		file_pattern = { },
+		cloak_pattern = { },
+		replace = nil
+	},
+	is_yarn_installed = false
 };

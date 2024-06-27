@@ -420,6 +420,52 @@ nmap(
 	"//plugin/cloak"
 );
 
+-- other/vimwiki
+nmap(
+	"<leader>ww",
+	"<Plug>VimwikiIndex",
+	{ desc = "open the vimwiki index file" },
+	"//plugin/vimwiki"
+);
+nmap(
+	"<leader>wt",
+	"<Plug>VimwikiTabIndex",
+	{ desc = "open the vimwiki index file in a new tab" },
+	"//plugin/vimwiki"
+);
+nmap(
+	"<leader>ws",
+	"<Plug>VimwikiUISelect",
+	{ desc = "list and select from available wikis" },
+	"//plugin/vimwiki"
+);
+nmap(
+	"<leader>wd",
+	"<Plug>VimwikiDeleteFile",
+	{ desc = "delete the current vimwiki markdown file" },
+	"//plugin/vimwiki"
+);
+nmap(
+	"<leader>wr",
+	"<Plug>VimwikiRenameFile",
+	{ desc = "rename the current vimwiki markdown file" },
+	"//plugin/vimwiki"
+);
+nmap(
+	"<leader>wn",
+	"<Plug>VimwikiGoto",
+	{ desc = "goto or create new vimwiki markdown file" },
+	"//plugin/vimwiki"
+);
+
+-- other/markdown_preview
+nmap(
+	"<leader>mp",
+	"<cmd>MarkdownPreviewToggle",
+	{ desc = "toggle markdown preview for the current markdown file" },
+	"//plugin/markdown_preview"
+);
+
 -- essentials/telescope + quality_of_life/undotree
 nmap(
 	"fu",
