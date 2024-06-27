@@ -20,6 +20,7 @@ vim.opt.signcolumn = "yes";                                                   --
 vim.opt.colorcolumn = "78";                                                   -- show the text length guide column
 vim.opt.showmode = false;                                                     -- dont show the current mode in command line
 vim.opt.scrolloff = 4;                                                        -- minimum distance between cursor and top/bottom
+vim.opt.mouse = "";                                                           -- disables mouse
 
 -- tooling options
 vim.opt.completeopt = { "menu", "menuone", "noselect", "preview" };           -- completion popup stuff (idk exactly what this does)

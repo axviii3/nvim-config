@@ -1,4 +1,4 @@
--- package_manager.lua
+-- manager.lua
 -- bootstrap and initialize lazy
 
 local lazy_plugin_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim";
@@ -16,15 +16,14 @@ end
 vim.opt.rtp:prepend(lazy_plugin_path);
 
 -- configure lazy
-require("lazy").setup({}, {
+require("lazy").setup("ax_config.plugin.list", {
 	checker = {
 		enabled = true,                                                       -- check for plugin updates
 		notify = false                                                        -- but dont notify
 	},
 	install = {
 		colorscheme = {                                                       -- try to use preferred colorscheme
-			config_options.colorscheme,
-			"default"
+			"retrobox"
 		}
 	},
 	change_detection = {
