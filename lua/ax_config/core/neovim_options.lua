@@ -17,7 +17,7 @@ vim.opt.whichwrap:append("l");                                                --
 vim.opt.termguicolors = true;                                                 -- 24 bit colors
 vim.opt.splitright = true;                                                    -- open new vertical splits to the right
 vim.opt.signcolumn = "yes";                                                   -- show the sign column
-vim.opt.colorcolumn = "78";                                                   -- show the text length guide column
+vim.opt.colorcolumn = config_options.intial_colorcolumn;                      -- show the text length guide column
 vim.opt.showmode = false;                                                     -- dont show the current mode in command line
 vim.opt.scrolloff = 4;                                                        -- minimum distance between cursor and top/bottom
 vim.opt.mouse = "";                                                           -- disables mouse
@@ -29,8 +29,8 @@ vim.opt.wrapscan = true;                                                      --
 vim.g.netrw_winsize = 20;                                                     -- netrw window size when not fullscreen
 
 -- tab formatting
-vim.opt.expandtab = false;                                                    -- whether to expand the tabs into spaces or not
-vim.opt.tabstop = 4;                                                          -- *number of spaces a tab is equivalent to (normal mode?)
+vim.opt.expandtab = config_options.initial_expand_tabs;                       -- whether to expand the tabs into spaces or not
+vim.opt.tabstop = config_options.initial_tab_length;                          -- *number of spaces a tab is equivalent to (normal mode?)
 vim.opt.shiftwidth = 0;                                                       -- *number of spaces equal to each level of indentation (tabstop when 0)
 vim.opt.softtabstop = -1;                                                     -- *number of spaces a tab is equivalent to while editing text (shiftwidth when -ve)
 vim.opt.autoindent = true;                                                    -- *auto indent new lines based on current line

@@ -3,11 +3,17 @@
 
 _G.custom_commands = {};
 
-local create_command = function(name, ...)
+local create_command = function(name, command, opts)
 	local new_name = string.upper(config_options.custom_command_prefix) ..
 					 name;
 	custom_commands[name] = new_name;
-	vim.api.nvim_create_user_command(new_name, ...);
+
+	local desc = opts.desc;
+	if opts and desc then
+		opts.desc = desc .. (" "):rep(61 - desc:len()) .. "//custom/core";
+	end
+
+	vim.api.nvim_create_user_command(new_name, command, opts);
 end
 
 -- netrw
@@ -32,7 +38,7 @@ create_command(
 		end
 		is_netrw_open_sidebar = not is_netrw_open_sidebar;
 	end,
-	{}
+	{ desc = "open the netrw sidebar" }
 );
 
 create_command(
@@ -48,7 +54,7 @@ create_command(
 			vim.cmd("Explore %:p:h");                                         -- %:p:h for current directory
 		end
 	end,
-	{}
+	{ desc = "open the netrw fullscreen explorer" }
 );
 
 -- substitutions
@@ -69,7 +75,7 @@ create_command(
 			end
 		);
 	end,
-	{}
+	{ desc = "substitute standalone occurences of word under cursor" }
 );
 
 create_command(
@@ -99,7 +105,7 @@ create_command(
 			end
 		);
 	end,
-	{}
+	{ desc = "substitute standalone occurences of inputted word" }
 );
 
 create_command(
@@ -119,7 +125,7 @@ create_command(
 			end
 		);
 	end,
-	{}
+	{ desc = "substitute occurences of character sequence under cursor" }
 );
 
 
@@ -150,5 +156,72 @@ create_command(
 			end
 		);
 	end,
-	{}
+	{ desc = "substitute occurences of character sequence inputted" }
+);
+
+-- live options replacing
+create_command(
+	"ChangeColorColumn",
+	function()
+		vim.ui.input(
+			{ prompt = "Enter color column value: " },
+			function(input)
+				if not input or not input:match("^%-?%d+$") then              -- match statement checks if the input string is a number or not
+					return;
+				end
+
+				vim.opt.colorcolumn = input;
+			end
+		);
+	end,
+	{ desc = "change the color column position" }
+);
+create_command(
+	"ChangeIndentation",
+	function()
+		vim.ui.select(
+			{ "tabs", "spaces" },
+			{ prompt = "What style of indentation do you prefer: " },
+			function(indentation_style)
+				if not indentation_style then
+					return;
+				end
+				vim.ui.input(
+					{ prompt = "\r\n\nEnter tab length: " },
+					function(tab_len)
+						if not tab_len or not tab_len:match("^%-?%d+$") then  -- match statement checks if the input string is a number or not
+							return;
+						end
+
+						if vim.opt.expandtab._value then                      -- if previous indentation style was spaces
+							vim.opt.expandtab = false;                        -- then convert spaces to tabs
+							vim.cmd(
+								"%s/\\(^\\s*\\)\\@<="
+								---@diagnostic disable-next-line: undefined-field
+								.. (" "):rep(vim.opt.tabstop._value)          -- NOTE : we substitute instead of using the retab command as the command also
+								.. "/	/g",                                  -- replaces inline spaces to tabs
+								{ mods = { silent = true } }                  -- this regex was taken from https://stackoverflow.com/a/35050756
+							);
+							emulate_keys("<C-o>zz", "n");
+						end
+
+						vim.opt.tabstop = tonumber(tab_len);                  -- now adjust the indentation length (tabs will automatically do this)
+
+						if indentation_style == "spaces" then                 -- indentation style is already tabs so only if required indentation style is
+							vim.opt.expandtab = true;                        -- spaces then convert spaces to tabs
+							vim.cmd(
+								"%s/\\(^\\s*\\)\\@<=	/"
+								---@diagnostic disable-next-line: undefined-field
+								.. (" "):rep(vim.opt.tabstop._value)          -- NOTE : we substitute instead of using the retab command as the command also
+								.. "/g",                                      -- replaces inline tabs to spaces
+								{ mods = { silent = true } }
+							);
+							emulate_keys("<C-o>zz", "n");
+						end
+					end
+				);
+			end
+		);
+	end,
+	{ desc = "change indentation style and tab length" }
 );

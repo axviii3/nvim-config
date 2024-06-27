@@ -137,6 +137,14 @@ nmap(
 	{ desc = "fuzzy find through all help tags" },
 	"//plugin/telescope"
 );
+nmap(
+	"<leader>fc",
+	function()
+		telescope_builtin.commands();
+	end,
+	{ desc = "fuzzy find through all commands" },
+	"//plugin/telescope"
+);
 
 -- dev_tools/mason
 nmap(

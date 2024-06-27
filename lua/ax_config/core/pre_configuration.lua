@@ -5,10 +5,10 @@
 vim.cmd.colorscheme("retrobox");
 
 -- make the options file accessible globally
-local is_custom_options_available = pcall(require, "custom_options");
+local is_custom_options_available = pcall(require, "custom_config_options");
 
 if is_custom_options_available then
-	_G.config_options = require("custom_options");
+	_G.config_options = require("custom_config_options");
 else
 	_G.config_options = require("ax_config.default_options");
 	end
@@ -20,8 +20,8 @@ vim.api.nvim_create_augroup(config_options.user_augroup_name, {
 
 -- make keymap functions short and global
 _G.map = function(mode, lhs, rhs, opts, search_term)                          -- adds additional parameters to make searching keymaps with telescope easier
-	if opts and opts.desc and search_term then
-		local desc = opts.desc;
+	local desc = opts.desc;
+	if opts and desc and search_term then
 		opts.desc = desc .. (" "):rep(61 - desc:len()) .. search_term;
 	end
 

@@ -26,6 +26,20 @@ nmap(
 	"//core/netrw"
 );
 
+-- live option changes
+nmap(
+	"<leader>cl",
+	"<cmd>" .. custom_commands["ChangeColorColumn"] .. "<CR>",
+	{ desc = "change the color column position" },
+	"//core/options"
+);
+nmap(
+	"<leader>in",
+	"<cmd>" .. custom_commands["ChangeIndentation"] .. "<CR>",
+	{ desc = "change indentation style and tab length" },
+	"//core/options"
+);
+
 -- moving text
 nmap(
 	"<M-j>",
