@@ -62,6 +62,6 @@ provide some pretty cool functionality
 * Plugins which improve the quality of life of using neovim but I'll survive 
 without
 
-### plugin/config/*
+### [plugin/config/*](./../lua/ax_config/plugin/config)
 * Configuration for some plugins in `plugin/list/*` which have grow too BIG 
 and would be better to seperate in a different file
