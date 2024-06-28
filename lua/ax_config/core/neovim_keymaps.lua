@@ -41,29 +41,30 @@ nmap(
 );
 
 -- moving text
+-- NOTE: using "<cmd>" instead of ":" breaks these commands
 nmap(
 	"<M-j>",
-	"v<cmd>m '>+1<CR>gv=<Esc>",
+	"v:m '>+1<CR>gv=<Esc>",
 	{ desc = "move the current line up" },
 	"//core/text_editing"
 );
 nmap(
 	"<M-k>",
-	"v<cmd>m '<-2<CR>gv=<Esc>",
+	"v:m '<-2<CR>gv=<Esc>",
 	{ desc = "move the current line down" },
 	"//core/text_editing"
 );
 map(
 	"v",
 	"<M-j>",
-	"<cmd>m '>+1<CR>gv=<Esc>gv",
+	":m '>+1<CR>gv=<Esc>gv",
 	{ desc = "move the selection down" },
 	"//core/text_editing"
 );
 map(
 	"v",
 	"<M-k>",
-	"<cmd>m '<-2<CR>gv=<Esc>gv",
+	":m '<-2<CR>gv=<Esc>gv",
 	{ desc = "move the selection up" },
 	"//core/text_editing"
 );

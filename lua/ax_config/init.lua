@@ -3,6 +3,7 @@
 
 require("ax_config.core.pre_configuration");
 require("ax_config.core.custom_commands");
+require("ax_config.core.statusline");
 require("ax_config.core.neovim_options");
 require("ax_config.core.neovim_keymaps");
 require("ax_config.core.autocommands");

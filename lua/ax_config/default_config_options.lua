@@ -8,6 +8,14 @@ return {
 	undo_files_dir = vim.fn.stdpath("cache") .. "/undofiles",
 
 	-- options config
+	mode_names = {
+		["n"] = " Normal ", ["niI"] = " Insert [Normal] ",
+		["niR"] = " Replace [Normal] ", ["nt"] = " Terminal [Normal] ",
+		["i"] = " Insert ", ["R"] = " Replace ", ["v"] = " Visual ",
+		["V"] = " Visual [Line] ", [""] = " Visual [Block] ",
+		["c"] = " Command ", ["!"] = " Command [External]",
+		["t"] = " Terminal "
+	},
 	intial_colorcolumn = "0",
 	initial_expand_tabs = true,
 	initial_tab_length = 2,

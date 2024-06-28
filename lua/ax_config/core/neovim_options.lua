@@ -21,6 +21,7 @@ vim.opt.colorcolumn = config_options.intial_colorcolumn;                      --
 vim.opt.showmode = false;                                                     -- dont show the current mode in command line
 vim.opt.scrolloff = 4;                                                        -- minimum distance between cursor and top/bottom
 vim.opt.mouse = "";                                                           -- disables mouse
+vim.o.statusline = table.concat(statusline.format, "");                       -- format the statusline
 
 -- tooling options
 vim.opt.completeopt = { "menu", "menuone", "noselect", "preview" };           -- completion popup stuff (idk exactly what this does)
