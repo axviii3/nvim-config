@@ -17,7 +17,7 @@ initiate package manager and plugin autocommands
 * Sets commands for Substitutions
 * Sets commands for Live Option Changes (changing some vim options on the go)
 
-### [core/statusline](./../lua/ax_config/core/statusline)
+### [core/statusline.lua](./../lua/ax_config/core/statusline.lua)
 * Set highlightgroups
 * Create components for statusline like filepath, position, mode, diagnostics
 * Create the status line format table
