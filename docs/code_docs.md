@@ -43,18 +43,18 @@ loaded
 ### [plugin/keymaps.lua](./../lua/ax_config/plugin/keymaps.lua)
 * Set keymaps related to plugins and plugin commands
 
-### [plugin/list/aesthetics.lua](./../lua/ax_config/plugin/list/aesthetics)
+### [plugin/list/aesthetics.lua](./../lua/ax_config/plugin/list/aesthetics.lua)
 * Plugins affecting the visual appearence of neovim
 
-### [plugin/list/dev_tools.lua](./../lua/ax_config/plugin/list/dev_tools)
+### [plugin/list/dev_tools.lua](./../lua/ax_config/plugin/list/dev_tools.lua)
 * Plugins which aid in development and code writing like lsps, completion, 
 etc
 
-### [plugin/list/essentials.lua](./../lua/ax_config/plugin/list/essentials)
+### [plugin/list/essentials.lua](./../lua/ax_config/plugin/list/essentials.lua)
 * Plugins which are essential for a great neovim experience and I would 
 rather not not have
 
-### [plugin/list/other.lua](./../lua/ax_config/plugin/list/other)
+### [plugin/list/other.lua](./../lua/ax_config/plugin/list/other.lua)
 * Plugins which do not directly affect neovim's tasks and text editing but 
 provide some pretty cool functionality
 
