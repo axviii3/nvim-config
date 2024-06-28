@@ -459,7 +459,7 @@ nmap(
 -- other/markdown_preview
 nmap(
 	"<leader>mp",
-	"<cmd>MarkdownPreviewToggle",
+	"<cmd>MarkdownPreviewToggle<CR>",
 	{ desc = "toggle markdown preview for the current markdown file" },
 	"//plugin/markdown_preview"
 );

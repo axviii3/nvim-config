@@ -8,5 +8,9 @@ require("ax_config.core.neovim_options");
 require("ax_config.core.neovim_keymaps");
 require("ax_config.core.autocommands");
 
+if not config_options.enable_plugins then
+	return;
+end
+
 require("ax_config.plugin.manager");
 require("ax_config.plugin.autocommands");

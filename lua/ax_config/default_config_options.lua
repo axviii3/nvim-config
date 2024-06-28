@@ -6,6 +6,7 @@ return {
 	user_augroup_name = "user_augroup",
 	custom_command_prefix = "",
 	undo_files_dir = vim.fn.stdpath("cache") .. "/undofiles",
+	enable_plugins = true,
 
 	-- options config
 	mode_names = {
