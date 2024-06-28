@@ -10,7 +10,7 @@ local is_custom_options_available = pcall(require, "custom_config_options");
 if is_custom_options_available then
 	_G.config_options = require("custom_config_options");
 else
-	_G.config_options = require("ax_config.default_options");
+	_G.config_options = require("ax_config.default_config_options");
 	end
 
 -- create augroup for custom autocommands
