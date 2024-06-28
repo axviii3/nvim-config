@@ -266,7 +266,7 @@ map(
 			emulate_keys(vim.keycode("<Tab>"), "ni");
 		end
 	end,
-	{ desc = "" },
+	{ desc = "select next completion suggestion" },
 	"//plugin/nvim_cmp"
 
 );
@@ -282,7 +282,7 @@ map(
 			emulate_keys(vim.keycode("<S-Tab>"), "ni");
 		end
 	end,
-	{ desc = "" },
+	{ desc = "select previous completion suggestion" },
 	"//plugin/nvim_cmp"
 
 );
@@ -299,7 +299,7 @@ map(
 			emulate_keys(vim.keycode("<CR>"), "ni");
 		end
 	end,
-	{ desc = "" },
+	{ desc = "pick selected completion suggestion" },
 	"//plugin/nvim_cmp"
 
 );
