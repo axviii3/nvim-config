@@ -7,7 +7,7 @@ _G.statusline = {};
 _G.statusline.components = {}
 
 _G.statusline.components.filepath = function()
-	return ("%%#%s#%s%%*"):format("Directory", " %<%f ");
+	return ("%%#%s#%s%%*"):format("Directory", " %>%f ");
 end
 
 _G.statusline.components.position = function()
@@ -37,7 +37,7 @@ _G.statusline.format = {
 	"%{%v:lua.statusline.components.mode()%}",
 	"%{%v:lua.statusline.components.warnings()%}",
 	"%{%v:lua.statusline.components.errors()%}",
-	"%r", "%h", "%m", "%=",
+	"%r", "%w", "%h", "%m", "%=",
 	"%{%v:lua.statusline.components.filepath()%}",
 	"%{%v:lua.statusline.components.position()%}"
 };
