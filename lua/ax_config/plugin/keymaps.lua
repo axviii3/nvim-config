@@ -240,8 +240,7 @@ map(
 	{ "i", "s", "n" },
 	"<C-f>",
 	function()
-		print("-1");
-		cmp.mapping.scroll_docs(-1);
+		cmp.scroll_docs(-1);
 	end,
 	{ desc = "scroll down completion docs" },
 	"//plugin/nvim_cmp"
@@ -250,8 +249,7 @@ map(
 	{ "i", "s", "n" },
 	"<C-b>",
 	function()
-		print("1");
-		cmp.mapping.scroll_docs(1);
+		cmp.scroll_docs(1);
 	end,
 	{ desc = "scroll up completion docs" },
 	"//plugin/nvim_cmp"
