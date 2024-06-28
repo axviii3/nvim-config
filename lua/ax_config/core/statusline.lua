@@ -1,7 +1,7 @@
-vim.api.nvim_set_hl(0, "Statusline", { bg = "#1B1B1B" });
-vim.api.nvim_set_hl(0, "StatuslineNC", { bg = "#1B1B1B" });
-vim.api.nvim_set_hl(0, "StatuslineTerm", { bg = "#1B1B1B" });
-vim.api.nvim_set_hl(0, "StatuslineTermNC", { bg = "#1B1B1B" });
+vim.api.nvim_set_hl(0, "Statusline", { bg = "#1C1C1C" });
+vim.api.nvim_set_hl(0, "StatuslineNC", { bg = "#1C1C1C" });
+vim.api.nvim_set_hl(0, "StatuslineTerm", { bg = "#1C1C1C" });
+vim.api.nvim_set_hl(0, "StatuslineTermNC", { bg = "#1C1C1C" });
 
 _G.statusline = {};
 _G.statusline.components = {}
