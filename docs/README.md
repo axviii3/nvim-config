@@ -2,7 +2,7 @@
 
 ### TL;DR
 Neovim configration with a minimal configuration with a relatievely low 
-amount of plugins heavily personalised to my use cases
+amount of plugins heavily personalised to my use cases.
 
 ### Installation
 Download and move, or clone this repository to neovim's config location.  
@@ -48,3 +48,11 @@ The configuration is divided into two parts
 The plugin configurations can be disabled via custom config options.
 
 [Detailed code docs](./code_docs.md)
+
+### Screenshots
+#### Last updated 28.06.24
+![start_screen](./screenshots/start_screen.png)
+![netrw_explorer](./screenshots/netrw_explorer.png)
+![keymap_search](./screenshots/keymap_search.png)
+![code_example](./screenshots/code_example.png)
+![dev_tools_completion](./screenshots/dev_tools_completion.png)

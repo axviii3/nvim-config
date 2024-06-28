@@ -1,4 +1,5 @@
-# My Personal Custom Options (28.6.24)
+# My Personal Custom Options
+### Last update 28.06.24
 
 ```lua
 -- custom_config_options.lua
