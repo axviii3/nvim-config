@@ -6,8 +6,8 @@ vim.api.nvim_set_hl(0, "StatuslineTermNC", { bg = "#1B1B1B" });
 _G.statusline = {};
 _G.statusline.components = {}
 
-_G.statusline.components.filepath = function()
-	return ("%%#%s#%s%%*"):format("Directory", " %>%f ");
+_G.statusline.components.filename = function()
+	return ("%%#%s#%s%%*"):format("Directory", " %t ");
 end
 
 _G.statusline.components.position = function()
@@ -38,6 +38,6 @@ _G.statusline.format = {
 	"%{%v:lua.statusline.components.warnings()%}",
 	"%{%v:lua.statusline.components.errors()%}",
 	"%r", "%w", "%h", "%m", "%=",
-	"%{%v:lua.statusline.components.filepath()%}",
+	"%{%v:lua.statusline.components.filename()%}",
 	"%{%v:lua.statusline.components.position()%}"
 };
