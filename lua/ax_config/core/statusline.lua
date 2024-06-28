@@ -11,13 +11,13 @@ _G.statusline.components.filepath = function()
 end
 
 _G.statusline.components.position = function()
-	return ("%%#%s#%s%%*"):format("Search"," %3l:%-3c~ %2p%%  ");
+	return ("%%#%s#%s%%*"):format("Search","  %l:%-c ~ %2p%%  ");
 end
 
 _G.statusline.components.mode = function()
 	local mode = vim.fn.mode(" ");
 	local mode_name = config_options.mode_names[mode];
-	mode_name = mode_name and mode_name or " " .. mode .. " ";
+	mode_name = mode_name and mode_name or "  " .. mode .. "  ";
 	return ("%%#%s#%s%%*"):format("IncSearch", mode_name);
 end
 

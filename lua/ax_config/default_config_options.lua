@@ -4,17 +4,17 @@
 return {
 	-- setup config
 	user_augroup_name = "user_augroup",
-	custom_command_prefix = "user",
+	custom_command_prefix = "",
 	undo_files_dir = vim.fn.stdpath("cache") .. "/undofiles",
 
 	-- options config
 	mode_names = {
-		["n"] = " Normal ", ["niI"] = " Insert [Normal] ",
-		["niR"] = " Replace [Normal] ", ["nt"] = " Terminal [Normal] ",
-		["i"] = " Insert ", ["R"] = " Replace ", ["v"] = " Visual ",
-		["V"] = " Visual [Line] ", [""] = " Visual [Block] ",
-		["c"] = " Command ", ["!"] = " Command [External]",
-		["t"] = " Terminal "
+		["n"] = "  Normal  ", ["niI"] = "  Insert [Normal]  ",
+		["niR"] = "  Replace [Normal]  ", ["nt"] = "  Terminal [Normal]  ",
+		["i"] = "  Insert  ", ["R"] = "  Replace  ", ["v"] = "  Visual  ",
+		["V"] = "  Visual [Line]  ", [""] = "  Visual [Block]  ",
+		["c"] = "  Command  ", ["!"] = "  Command [External]  ",
+		["t"] = "  Terminal  "
 	},
 	intial_colorcolumn = "0",
 	initial_expand_tabs = true,

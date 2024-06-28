@@ -5,7 +5,7 @@ _G.custom_commands = {};
 
 local create_command = function(name, command, opts)
 	local new_name = string.upper(config_options.custom_command_prefix) ..
-					 name;
+						name;
 	custom_commands[name] = new_name;
 
 	local desc = opts.desc;
@@ -193,30 +193,24 @@ create_command(
 							return;
 						end
 
-						if vim.opt.expandtab._value then                      -- if previous indentation style was spaces
-							vim.opt.expandtab = false;                        -- then convert spaces to tabs
-							vim.cmd(
-								"%s/\\(^\\s*\\)\\@<="
-								---@diagnostic disable-next-line: undefined-field
-								.. (" "):rep(vim.opt.tabstop._value)          -- NOTE : we substitute instead of using the retab command as the command also
-								.. "/	/g",                                  -- replaces inline spaces to tabs
-								{ mods = { silent = true } }                  -- this regex was taken from https://stackoverflow.com/a/35050756
-							);
-							emulate_keys("<C-o>zz", "n");
-						end
+						vim.opt.expandtab = false;                            -- initially we convert everything to tab style indentation
+						vim.cmd(
+							"silent! %s/\\(^\\s*\\)\\@<="
+							---@diagnostic disable-next-line: undefined-field -- NOTE: not using "._value" returns a table instead of the requried value
+							.. (" "):rep(vim.opt.tabstop._value)              -- NOTE : we substitute instead of using the retab command as the command also
+							.. "/	/g"                                       -- replaces inline spaces to tabs (regex from https://stackoverflow.com/a/35050756)
+						);
 
-						vim.opt.tabstop = tonumber(tab_len);                  -- now adjust the indentation length (tabs will automatically do this)
+						vim.opt.tabstop = tonumber(tab_len);                  -- tabs automatically resize according to tabstop
 
 						if indentation_style == "spaces" then                 -- indentation style is already tabs so only if required indentation style is
-							vim.opt.expandtab = true;                        -- spaces then convert spaces to tabs
+							vim.opt.expandtab = true;                         -- spaces then convert spaces to tabs
 							vim.cmd(
-								"%s/\\(^\\s*\\)\\@<=	/"
+								"silent! %s/\\(^\\s*\\)\\@<=	/"
 								---@diagnostic disable-next-line: undefined-field
 								.. (" "):rep(vim.opt.tabstop._value)          -- NOTE : we substitute instead of using the retab command as the command also
-								.. "/g",                                      -- replaces inline tabs to spaces
-								{ mods = { silent = true } }
+								.. "/g"                                       -- replaces inline tabs to spaces
 							);
-							emulate_keys("<C-o>zz", "n");
 						end
 					end
 				);
