@@ -2,7 +2,8 @@
 
 ### TL;DR
 Neovim configration with a minimal configuration with a relatievely low 
-amount of plugins heavily personalised to my use cases.
+amount of plugins heavily personalised to my use cases. Download this repo 
+in the neovim config directory to use.
 
 ### Installation
 Download and move, or clone this repository to neovim's config location.  
