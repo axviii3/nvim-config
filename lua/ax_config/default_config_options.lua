@@ -9,7 +9,7 @@ return {
 	enable_plugins = true,
 
 	-- options config
-	mode_names = {
+	mode_strings = {
 		["n"] = "  Normal  ", ["niI"] = "  Insert [Normal]  ",
 		["niR"] = "  Replace [Normal]  ", ["nt"] = "  Terminal [Normal]  ",
 		["i"] = "  Insert  ", ["R"] = "  Replace  ", ["v"] = "  Visual  ",

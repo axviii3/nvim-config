@@ -56,5 +56,4 @@ return {
 	},
 	is_yarn_installed = true
 };
-
 ```

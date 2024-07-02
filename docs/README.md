@@ -21,7 +21,7 @@ My [custom options](./my_custom_options.md)
 
 ### Features
 * Personalised to me (might not be a feature for everyone xD)
-* Relatievely low number plugins (26 as of 28.06.24)
+* Relatievely low number plugins (27 as of 2-July-24)
 * Very flexible and modular configuration
 * Easily searchable keymaps
     > By pressing "\<space\>fk" you can open the telescope picker listing 
@@ -50,7 +50,7 @@ The plugin configurations can be disabled via custom config options.
 [Detailed code docs](./code_docs.md)
 
 ### Screenshots
-#### Last updated 28.06.24
+#### Last updated 2-July-24
 ![start_screen](./screenshots/start_screen.png)
 ![netrw_explorer](./screenshots/netrw_explorer.png)
 ![keymap_search](./screenshots/keymap_search.png)

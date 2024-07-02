@@ -15,13 +15,13 @@ vim.opt.whichwrap:append("l");                                                --
 
 -- tui
 vim.opt.termguicolors = true;                                                 -- 24 bit colors
+vim.o.termguicolors = true;                                                   -- 24 bit colors (some docs have termgui in vim.o, failsafe)
 vim.opt.splitright = true;                                                    -- open new vertical splits to the right
 vim.opt.signcolumn = "yes";                                                   -- show the sign column
 vim.opt.colorcolumn = config_options.intial_colorcolumn;                      -- show the text length guide column
 vim.opt.showmode = false;                                                     -- dont show the current mode in command line
 vim.opt.scrolloff = 4;                                                        -- minimum distance between cursor and top/bottom
 vim.opt.mouse = "";                                                           -- disables mouse
-vim.o.statusline = table.concat(statusline.format, "");                       -- format the statusline
 
 -- tooling options
 vim.opt.completeopt = { "menu", "menuone", "noselect", "preview" };           -- completion popup stuff (idk exactly what this does)

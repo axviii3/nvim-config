@@ -1,5 +1,5 @@
 # Code Docs
-## Last updated 28.6.24
+## Last updated 2-July-24
 
 ### [init.lua](./../lua/ax_config/init.lua)
 Initiates all other configuration files and if `enable_plugins` is true then 
@@ -21,10 +21,10 @@ initiate package manager and plugin autocommands
 * Set highlightgroups
 * Create components for statusline like filepath, position, mode, diagnostics
 * Create the status line format table
+* Set up the statusline format table
 
 ### [core/neovim_options.lua](./../lua/ax_config/core/neovim_options.lua)
-* Set core neovim options mainly `vim.opt.*` but also `vim.o.statusline` and 
-`vim.g.netrw_winsize`
+* Set core neovim options mainly `vim.opt.*` but also `vim.g.netrw_winsize`
 
 ### [core/neovim_keymaps.lua](./../lua/ax_config/core/neovim_keymaps.lua)
 * Set keymaps related to core neovim and custom commands

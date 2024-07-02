@@ -1,7 +1,7 @@
-vim.api.nvim_set_hl(0, "Statusline", { bg = "#1C1C1C" });
-vim.api.nvim_set_hl(0, "StatuslineNC", { bg = "#1C1C1C" });
-vim.api.nvim_set_hl(0, "StatuslineTerm", { bg = "#1C1C1C" });
-vim.api.nvim_set_hl(0, "StatuslineTermNC", { bg = "#1C1C1C" });
+vim.api.nvim_set_hl(0, "Statusline", { bg = "none" });
+vim.api.nvim_set_hl(0, "StatuslineNC", { bg = "none" });
+vim.api.nvim_set_hl(0, "StatuslineTerm", { bg = "none" });
+vim.api.nvim_set_hl(0, "StatuslineTermNC", { bg = "none" });
 
 _G.statusline = {};
 _G.statusline.components = {}
@@ -15,10 +15,14 @@ _G.statusline.components.position = function()
 end
 
 _G.statusline.components.mode = function()
-	local mode = vim.fn.mode(" ");
-	local mode_name = config_options.mode_names[mode];
-	mode_name = mode_name and mode_name or "  " .. mode .. "  ";
-	return ("%%#%s#%s%%*"):format("IncSearch", mode_name);
+	local mode = " " .. vim.fn.mode() .. " ";
+	local mode_strings = config_options.mode_strings;
+
+	if mode_strings then
+		mode = mode_strings[mode:match("^%s(.-)%s*$")] or mode;               -- match function extracts non-white-space characters
+	end
+
+	return ("%%#%s#%s%%*"):format("IncSearch", mode);
 end
 
 _G.statusline.components.warnings = function()
@@ -41,3 +45,5 @@ _G.statusline.format = {
 	"%{%v:lua.statusline.components.filename()%}",
 	"%{%v:lua.statusline.components.position()%}"
 };
+
+vim.o.statusline = table.concat(statusline.format, "");                       -- format the statusline
