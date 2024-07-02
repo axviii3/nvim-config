@@ -4,7 +4,7 @@
 return {
 	-- my own color scheme
 	{
-		"axviii3/axtro_nvim",
+		"axviii3/axtro-nvim",
 		name = "axtro",
 		priority = 1000,
 		opts = {
