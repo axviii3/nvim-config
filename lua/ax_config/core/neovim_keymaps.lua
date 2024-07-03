@@ -167,25 +167,25 @@ nmap(
 
 -- split resizing
 nmap(
-	",",
+	"-",
 	"<cmd>wincmd <<CR>",
 	{ desc = "increase window width" },
 	"//core/wrapper"
 );
 nmap(
-	".",
+	"+",
 	"<cmd>wincmd ><CR>",
 	{ desc = "decrease window width" },
 	"//core/wrapper"
 );
 nmap(
-	"+",
+	"<leader>=",
 	"<cmd>wincmd +<CR>",
 	{ desc = "increase window height" },
 	"//core/wrapper"
 );
 nmap(
-	"-",
+	"<leader>-",
 	"<cmd>wincmd -<CR>",
 	{ desc = "decrease window height" },
 	"//core/wrapper"
