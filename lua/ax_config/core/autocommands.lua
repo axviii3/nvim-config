@@ -14,7 +14,6 @@ create_aucmd("FileType", {
 
 -- highlight text after yank
 create_aucmd("TextYankPost", {
-	pattern = "*",
 	group = config_options.user_augroup_name,
 	callback = function()
 		vim.highlight.on_yank({
@@ -22,4 +21,14 @@ create_aucmd("TextYankPost", {
 			timeout = 500
 		});
 	end
+});
+
+-- save and load views (to save folding states)
+create_aucmd({ "BufLeave", "BufWrite", "BufWinLeave", "BufDelete" }, {
+	group = config_options.user_augroup_name,
+	command = "silent! mkview"
+});
+create_aucmd({ "BufEnter" }, {
+	group = config_options.user_augroup_name,
+	command = "silent! loadview"
 });

@@ -61,4 +61,3 @@ vim.opt.swapfile = false;                                                     --
 vim.opt.backup = false;                                                       -- do not create a backup before overwriting a file
 vim.opt.writebackup = false;                                                  -- do not create temporary backups before overwriting a file
 vim.opt.undofile = true;                                                      -- create undofiles to store undo history
-vim.opt.undodir = config_options.undo_files_dir;                              -- where the undofiles are stored
