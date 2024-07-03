@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazy_plugin_path);
 require("lazy").setup("ax_config.plugin.list", {
 	checker = {
 		enabled = true,                                                       -- check for plugin updates
-		notify = false                                                        -- but dont notify
+		notify = false                                                        -- but don't notify
 	},
 	install = {
 		colorscheme = {                                                       -- try to use preferred colorscheme
@@ -27,6 +27,6 @@ require("lazy").setup("ax_config.plugin.list", {
 		}
 	},
 	change_detection = {
-		notify = false                                                        -- dont notify on config changes
+		notify = false                                                        -- don't notify on config changes
 	}
 });

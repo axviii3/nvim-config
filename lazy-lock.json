@@ -1,5 +1,5 @@
 {
-  "axtro": { "branch": "main", "commit": "cba68a73ef76f23b644e69ca1dee046e3160a874" },
+  "axtro": { "branch": "main", "commit": "7554399e1d7d5547f2eabd40a5285a578be590ca" },
   "cloak": { "branch": "main", "commit": "648aca6d33ec011dc3166e7af3b38820d01a71e4" },
   "cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
   "cmp_buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
@@ -11,7 +11,7 @@
   "comment": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
   "devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
-  "lazy.nvim": { "branch": "main", "commit": "a9d7ade203b3f3ee3058c082c62afdf8e4bcb416" },
+  "lazy.nvim": { "branch": "main", "commit": "d0921f5b9b3d2c5e09618da55a018228edcc4d16" },
   "lazydev": { "branch": "main", "commit": "78d8a11fbd02ad4eafa07dd8a43a959a69fb3bf8" },
   "lspconfig": { "branch": "master", "commit": "53a3c6444ec5006b567071614c83edc8ad651f6d" },
   "lspsaga": { "branch": "main", "commit": "6f920cfabddb9b7de5a3a4d0b7cd4f0774ae23e2" },
@@ -21,9 +21,11 @@
   "mason_lspconfig": { "branch": "main", "commit": "37a336b653f8594df75c827ed589f1c91d91ff6c" },
   "netrw": { "branch": "master", "commit": "c64f60b8a613900aad82ef1c285b892eb43e9e15" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
+  "promise_async": { "branch": "main", "commit": "28c1d5a295eb5310afa2523d4ae9aa41ec5a9de2" },
   "telescope": { "branch": "0.1.x", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "telescope_undo": { "branch": "main", "commit": "51be9ae7c42fc27c0b05505e3a0162e0f05fbb6a" },
   "todo_comments": { "branch": "main", "commit": "51e10f838e84b4756c16311d0b1ef0972c6482d2" },
-  "treesitter": { "branch": "master", "commit": "ffd7725102f47e7391d7a5e7621d178689602a52" },
+  "treesitter": { "branch": "master", "commit": "6cd4ce6cab184e8787f164a182954534221f2af2" },
+  "ufo": { "branch": "main", "commit": "aa2e676af592b4e99c105d80d6eafd1afc215d99" },
   "vimwiki": { "branch": "dev", "commit": "705ad1e0dded0e3b7ff5fac78547ab67c9d39bdf" }
 }

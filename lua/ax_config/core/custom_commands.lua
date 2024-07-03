@@ -211,6 +211,12 @@ create_command(
 								.. (" "):rep(vim.opt.tabstop._value)          -- NOTE : we substitute instead of using the retab command as the command also
 								.. "/g"                                       -- replaces inline tabs to spaces
 							);
+
+							vim.opt.listchars:append({                        -- leading multi spaces
+								leadmultispace =
+								---@diagnostic disable-next-line: undefined-field
+								"▎" .. ("◡"):rep(vim.opt.tabstop._value - 1)
+							});
 						end
 					end
 				);

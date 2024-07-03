@@ -71,9 +71,18 @@ map(
 
 -- stationary cursor
 nmap(
+	"<leader>lc",
+	function()
+		vim.opt.scrolloff = 999 - vim.o.scrolloff
+	end,
+	{ desc = "toggles between moving text and moving cursor" },
+	"//core/quality_of_life"
+);
+
+nmap(
 	"J",
 	"mzJ`z",
-	{ desc = "dont move the cursor when joining the next line" },
+	{ desc = "don't move the cursor when joining the next line" },
 	"//core/modification"
 );
 nmap(
@@ -158,26 +167,26 @@ nmap(
 
 -- split resizing
 nmap(
-	".",
-	"<C-w><",
+	",",
+	"<cmd>wincmd <<CR>",
 	{ desc = "increase window width" },
 	"//core/wrapper"
 );
 nmap(
-	",",
-	"<C-w>>",
+	".",
+	"<cmd>wincmd ><CR>",
 	{ desc = "decrease window width" },
 	"//core/wrapper"
 );
 nmap(
 	"+",
-	"<C-w>+",
+	"<cmd>wincmd +<CR>",
 	{ desc = "increase window height" },
 	"//core/wrapper"
 );
 nmap(
 	"-",
-	"<C-w>-",
+	"<cmd>wincmd -<CR>",
 	{ desc = "decrease window height" },
 	"//core/wrapper"
 );
@@ -206,4 +215,27 @@ nmap(
 	"<cmd>" .. custom_commands["SubstituteChars"] .. "<CR>",
 	{ desc = "substitute occurences of character sequence inputted" },
 	"//core/substitution"
+);
+-- change fold level
+nmap(
+	"zf",
+	function()
+		vim.ui.input(
+			{ prompt = "Fold level: " },
+			function(input)
+				if not input or not input:match("^%-?%d+$") then              -- match statement checks if the input string is a number or not
+					return;
+				end
+
+				if tonumber(input) > 10 then
+					vim.notify(
+						"If you want to open all folds, then use " ..
+						"zR instead"
+					);
+				end
+
+				vim.opt.foldlevel = tonumber(input);
+			end
+		);
+	end
 );

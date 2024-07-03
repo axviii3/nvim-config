@@ -89,12 +89,21 @@ nmap(
 
 -- essentials/telescope
 local telescope_builtin = require("telescope.builtin");
+
 nmap(
 	"<leader>ff",
 	function()
 		telescope_builtin.find_files();
 	end,
 	{ desc = "fuzzy find through project files" },
+	"//plugin/telescope"
+);
+nmap(
+	"<leader>fh",
+	function()
+		telescope_builtin.find_files({ hidden = true });
+	end,
+	{ desc = "fuzzy find through project files including hidden files" },
 	"//plugin/telescope"
 );
 nmap(
@@ -127,14 +136,6 @@ nmap(
 		telescope_builtin.buffers();
 	end,
 	{ desc = "fuzzy find through all open buffers" },
-	"//plugin/telescope"
-);
-nmap(
-	"<leader>fh",
-	function()
-		telescope_builtin.help_tags();
-	end,
-	{ desc = "fuzzy find through all help tags" },
 	"//plugin/telescope"
 );
 nmap(
@@ -284,7 +285,6 @@ map(
 	end,
 	{ desc = "select previous completion suggestion" },
 	"//plugin/nvim_cmp"
-
 );
 map(
 	{ "i", "s" },
@@ -305,10 +305,12 @@ map(
 );
 
 -- quality_of_life/todo_comment
+local todo_comments = require("todo-comments");
+
 nmap(
 	"]t",
 	function()
-		require("todo-comments").jump_next();
+		todo_comments.jump_next();
 	end,
 	{ desc = "jump to the next todo comment" },
 	"//plugin/todo_comments"
@@ -316,7 +318,7 @@ nmap(
 nmap(
 	"[t",
 	function()
-		require("todo-comments").jump_prev();
+		todo_comments.jump_prev();
 	end,
 	{ desc = "jump to the previous todo comment" },
 	"//plugin/todo_comments"

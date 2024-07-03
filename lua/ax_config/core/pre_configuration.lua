@@ -20,8 +20,8 @@ vim.api.nvim_create_augroup(config_options.user_augroup_name, {
 
 -- make keymap functions short and global
 _G.map = function(mode, lhs, rhs, opts, search_term)                          -- adds additional parameters to make searching keymaps with telescope easier
-	local desc = opts.desc;
-	if opts and desc and search_term then
+	if opts and opts.desc and search_term then
+		local desc = opts.desc;
 		opts.desc = desc .. (" "):rep(61 - desc:len()) .. search_term;
 	end
 

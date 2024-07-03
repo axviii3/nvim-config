@@ -14,20 +14,29 @@ vim.opt.whichwrap:append("h");                                                --
 vim.opt.whichwrap:append("l");                                                -- wrap around to next line when pressing l at the end of a line
 
 -- tui
+vim.opt.cursorline = true;                                                    -- highlights the current line of the cursor
 vim.opt.termguicolors = true;                                                 -- 24 bit colors
 vim.o.termguicolors = true;                                                   -- 24 bit colors (some docs have termgui in vim.o, failsafe)
 vim.opt.splitright = true;                                                    -- open new vertical splits to the right
 vim.opt.signcolumn = "yes";                                                   -- show the sign column
 vim.opt.colorcolumn = config_options.intial_colorcolumn;                      -- show the text length guide column
-vim.opt.showmode = false;                                                     -- dont show the current mode in command line
+vim.opt.showmode = false;                                                     -- don't show the current mode in command line
 vim.opt.scrolloff = 4;                                                        -- minimum distance between cursor and top/bottom
 vim.opt.mouse = "";                                                           -- disables mouse
+vim.opt.ruler = false;                                                        -- turn off command line ruler
 
 -- tooling options
+vim.opt.foldmethod = "indent";                                                -- fold on expressions
+vim.opt.foldtext = "";                                                        -- no extra text
+vim.opt.foldcolumn = "0";                                                     -- no extra column
+vim.opt.foldlevel = 999;                                                      -- don't fold by default
+vim.opt.foldlevelstart = 2;                                                   -- on opening a buffer fold after this many levels
+vim.opt.foldnestmax = 5;                                                      -- more than this many folds cant be nested
 vim.opt.completeopt = { "menu", "menuone", "noselect", "preview" };           -- completion popup stuff (idk exactly what this does)
-vim.opt.incsearch = true;                                                     -- highlight search results as the search term is being typed
+vim.opt.inccommand = "split";                                                 -- preview substitutions live and also show off screen ones in separate window
 vim.opt.wrapscan = true;                                                      -- wrap to the top is search reaches file end
 vim.g.netrw_winsize = 20;                                                     -- netrw window size when not fullscreen
+vim.opt.jumpoptions = "stack,view";                                           -- making jumping around more consistent https://www.reddit.com/r/neovim/comments/1cytkbq/comment/l7cqdmq
 
 -- tab formatting
 vim.opt.expandtab = config_options.initial_expand_tabs;                       -- whether to expand the tabs into spaces or not
@@ -39,9 +48,12 @@ vim.opt.smartindent = true;                                                   --
 
 -- invisible characters
 vim.opt.listchars = {};                                                       -- reset
-vim.opt.listchars:append({ lead = "∙" });                                      -- leading spaces
-vim.opt.listchars:append({ tab = "▎∙" });                                       -- tabs
-vim.opt.listchars:append({ trail = "◡" });                                     -- trailing spaces
+vim.opt.listchars:append({ lead = "◡" });                                     -- leading spaces
+vim.opt.listchars:append({                                                    -- leading multi spaces
+	leadmultispace = "▎" .. ("◡"):rep(config_options.initial_tab_length - 1)
+});
+vim.opt.listchars:append({ tab = "▎∙" });                                     -- tabs
+vim.opt.listchars:append({ trail = "◡" });                                    -- trailing spaces
 vim.opt.list = true;                                                          -- show some invisible characters using assigned character
 
 -- backup and undo history

@@ -3,7 +3,7 @@
 
 local create_aucmd = vim.api.nvim_create_autocmd;
 
--- create plugin keymaps
+-- initiate plugin related stuff after the plugins are loaded
 create_aucmd("VimEnter", {
 	group = config_options.user_augroup_name,
 	callback = function()

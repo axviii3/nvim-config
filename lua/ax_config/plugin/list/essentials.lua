@@ -58,6 +58,8 @@ return {
 		},
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts);
+			vim.opt.foldmethod = "expr";                                      -- fold on expressions
+			vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()";             -- set the fold expression to treesitter's function
 		end
 	}
 };
