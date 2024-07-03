@@ -237,5 +237,7 @@ nmap(
 				vim.opt.foldlevel = tonumber(input);
 			end
 		);
-	end
+	end,
+	{ desc = "change the fold level for the current buffer" },
+	"//core/quality_of_life"
 );
