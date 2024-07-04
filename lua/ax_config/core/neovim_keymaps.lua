@@ -217,7 +217,19 @@ nmap(
 	"//core/substitution"
 );
 
--- walk quick fix list
+-- quick fix list
+nmap(
+	"<leader>q",
+	"<cmd>copen<CR>",
+	{ desc = "open the quick fix list" },
+	"//core/quality_of_life"
+);
+nmap(
+	"<leader>Q",
+	"<cmd>ccl<CR>",
+	{ desc = "close the quick fix list" },
+	"//core/quality_of_life"
+);
 nmap(
 	"]q",
 	"<cmd>cnext<CR>",

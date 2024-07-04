@@ -135,6 +135,12 @@ nmap(
 	"//plugin/telescope"
 );
 nmap(
+	"<leader>fr",
+	telescope_builtin.registers,
+	{ desc = "fuzzy find through vim registers" },
+	"//plugin/telescope"
+);
+nmap(
 	"<leader>fb",
 	telescope_builtin.buffers,
 	{ desc = "fuzzy find through all open buffers" },
