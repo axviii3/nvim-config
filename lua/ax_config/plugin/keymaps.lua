@@ -91,59 +91,71 @@ nmap(
 local telescope_builtin = require("telescope.builtin");
 
 nmap(
+	"<leader>/",
+	telescope_builtin.current_buffer_fuzzy_find,
+	{ desc = "fuzzy find through current buffer" },
+	"//plugin/telescope"
+);
+nmap(
 	"<leader>ff",
-	function()
-		telescope_builtin.find_files();
-	end,
+	telescope_builtin.find_files,
 	{ desc = "fuzzy find through project files" },
 	"//plugin/telescope"
 );
 nmap(
 	"<leader>fh",
+	telescope_builtin.help_tags,
+	{ desc = "fuzzy find through neovim help tags" },
+	"//plugin/telescope"
+);
+nmap(
+	"<leader>fn",
 	function()
-		telescope_builtin.find_files({ hidden = true });
+		telescope_builtin.find_files({ cwd = vim.fn.stdpath("config") });
 	end,
-	{ desc = "fuzzy find through project files including hidden files" },
+	{ desc = "fuzzy find through neovim config files" },
 	"//plugin/telescope"
 );
 nmap(
 	"<leader>fo",
-	function()
-		telescope_builtin.oldfiles();
-	end,
+	telescope_builtin.oldfiles,
 	{ desc = "fuzzy find through recent files" },
 	"//plugin/telescope"
 );
 nmap(
 	"<leader>fk",
-	function()
-		telescope_builtin.keymaps();
-	end,
+	telescope_builtin.keymaps,
 	{ desc = "fuzzy find through all keymaps" },
 	"//plugin/telescope"
 );
 nmap(
 	"<leader>fg",
-	function()
-		telescope_builtin.live_grep();
-	end,
+	telescope_builtin.live_grep,
 	{ desc = "fuzzy find through grep results live" },
 	"//plugin/telescope"
 );
 nmap(
 	"<leader>fb",
-	function()
-		telescope_builtin.buffers();
-	end,
+	telescope_builtin.buffers,
 	{ desc = "fuzzy find through all open buffers" },
 	"//plugin/telescope"
 );
 nmap(
 	"<leader>fc",
-	function()
-		telescope_builtin.commands();
-	end,
+	telescope_builtin.commands,
 	{ desc = "fuzzy find through all commands" },
+	"//plugin/telescope"
+);
+nmap(
+	"gr",
+	require("telescope.builtin").lsp_references,
+	{ desc = "fuzzy find through the references of the word under cursor" },
+	"//plugin/telescope"
+);
+nmap(
+	"gI",
+	require("telescope.builtin").lsp_implementations,
+	{ desc = "fuzzy find throught the implemtations of word under cursor" },
 	"//plugin/telescope"
 );
 
@@ -163,25 +175,25 @@ nmap(
 	"//plugin/lspsaga"
 );
 nmap(
-	"<leader>gd",
+	"gd",
 	"<cmd>Lspsaga goto_definition<CR>",
 	{ desc = "goto the definition of the term under cursor" },
 	"//plugin/lspsaga"
 );
 nmap(
-	"<leader>gtd",
+	"gt",
 	"<cmd>Lspsaga goto_type_definition<CR>",
 	{ desc = "goto the type definition of the term under cursor" },
 	"//plugin/lspsaga"
 );
 nmap(
-	"<leader>pd",
+	"gp",
 	"<cmd>Lspsaga peek_definition<CR>",
 	{ desc = "peek the definition of the term under cursor" },
 	"//plugin/lspsaga"
 );
 nmap(
-	"<leader>ptd",
+	"gP",
 	"<cmd>Lspsaga peek_type_definition<CR>",
 	{ desc = "peek the type definition of the term under cursor" },
 	"//plugin/lspsaga"
@@ -203,6 +215,12 @@ map(
 	"<leader>tr",
 	"<cmd>Lspsaga term_toggle<CR>",
 	{ desc = "toggle terminal" },
+	"//plugin/lspsaga"
+);
+nmap(
+	"K",
+	"<cmd>Lspsaga hover_doc<CR>",
+	{ desc = "show the docs for the term under the cursor" },
 	"//plugin/lspsaga"
 );
 nmap(
@@ -230,8 +248,6 @@ map(
 			cmp.close_docs();
 		elseif cmp.visible() then
 			cmp.open_docs();
-		else
-			emulate_keys(vim.keycode("K"), "i");
 		end
 	end,
 	{ desc = "toggle completion documentation window" },

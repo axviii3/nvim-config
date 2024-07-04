@@ -1,4 +1,4 @@
--- neovim_keymaps.lua
+
 -- set keymaps concerning stuff available in core neovim
 
 vim.g.mapleader = " ";
@@ -216,6 +216,21 @@ nmap(
 	{ desc = "substitute occurences of character sequence inputted" },
 	"//core/substitution"
 );
+
+-- walk quick fix list
+nmap(
+	"]q",
+	"<cmd>cnext<CR>",
+	{ desc = "walk forward in the quick fix list" },
+	"//core/quality_of_life"
+);
+nmap(
+	"[q",
+	"<cmd>cprev<CR>",
+	{ desc = "walk backward in the quick fix list" },
+	"//core/quality_of_life"
+);
+
 -- change fold level
 nmap(
 	"zf",
@@ -240,4 +255,12 @@ nmap(
 	end,
 	{ desc = "change the fold level for the current buffer" },
 	"//core/quality_of_life"
+);
+
+-- lsp keymaps
+nmap(
+	"gD",
+	vim.lsp.buf.declaration,
+	{ desc = "goto the declaration of the term under cursor" },
+	"//core/lsp"
 );
