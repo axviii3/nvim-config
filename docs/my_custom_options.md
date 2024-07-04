@@ -1,5 +1,5 @@
 # My Personal Custom Options
-### Last update 28.06.24
+### Last update 4-July-24
 
 ```lua
 -- custom_config_options.lua
@@ -9,7 +9,6 @@ return {
 	-- setup config
 	user_augroup_name = "ax_augroup",
 	custom_command_prefix = "ax",
-	undo_files_dir = vim.fn.stdpath("cache") .. "/undofiles",
 	enable_plugins = true,
 
 	-- options config

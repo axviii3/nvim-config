@@ -2,6 +2,14 @@
 -- plugins improving the quality of life of using neovim but not essential
 
 return {
+	-- pretty diagnostics list
+	{
+		"folke/trouble.nvim",
+		name = "trouble",
+		dependencies = { "devicons" },
+		opts = {}
+	},
+
 	-- undo history in a telescope picker
 	{
 		"debugloop/telescope-undo.nvim",

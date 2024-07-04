@@ -304,6 +304,20 @@ map(
 
 );
 
+-- quality_of_life/trouble
+nmap(
+	"<leader>td",
+	"<cmd>Trouble diagnostics toggle<CR>",
+	{ desc = "open project wide trouble diagnostics" },
+	"//plugin/trouble"
+);
+nmap(
+	"<leader>tb",
+	"<cmd>Trouble diagnostics toggle filter.buf=0<CR>",
+	{ desc = "open trouble diagnostics for current buffer" },
+	"//plugin/trouble"
+);
+
 -- quality_of_life/todo_comment
 local todo_comments = require("todo-comments");
 

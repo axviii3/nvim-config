@@ -22,7 +22,7 @@ My [custom options](./my_custom_options.md)
 
 ### Features
 * Personalised to me (might not be a feature for everyone xD)
-* Relatievely low number plugins (27 as of 2-July-24)
+* Relatievely low number plugins, kinda (28 as of 4-July-24)
 * Very flexible and modular configuration
 * Easily searchable keymaps
     > By pressing "\<space\>fk" you can open the telescope picker listing 
