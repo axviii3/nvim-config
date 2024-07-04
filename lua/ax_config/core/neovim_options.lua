@@ -14,18 +14,22 @@ vim.opt.whichwrap:append("h");                                                --
 vim.opt.whichwrap:append("l");                                                -- wrap around to next line when pressing l at the end of a line
 
 -- tui
+vim.opt.updatetime = 250;                                                     -- decreased update time
 vim.opt.cursorline = true;                                                    -- highlights the current line of the cursor
 vim.opt.termguicolors = true;                                                 -- 24 bit colors
 vim.o.termguicolors = true;                                                   -- 24 bit colors (some docs have termgui in vim.o, failsafe)
 vim.opt.splitright = true;                                                    -- open new vertical splits to the right
+vim.opt.splitbelow = true;                                                    -- open new horizontal splits below
 vim.opt.signcolumn = "yes";                                                   -- show the sign column
 vim.opt.colorcolumn = config_options.intial_colorcolumn;                      -- show the text length guide column
 vim.opt.showmode = false;                                                     -- don't show the current mode in command line
-vim.opt.scrolloff = 4;                                                        -- minimum distance between cursor and top/bottom
+vim.opt.scrolloff = 5;                                                        -- minimum distance between cursor and top/bottom
 vim.opt.mouse = "";                                                           -- disables mouse
 vim.opt.ruler = false;                                                        -- turn off command line ruler
 
 -- tooling options
+vim.opt.ignorecase = true;                                                    -- ignore case when searching
+vim.opt.smartcase = true;                                                     -- ignore case when searching in lowecase
 vim.opt.foldmethod = "indent";                                                -- fold on expressions
 vim.opt.foldtext = "";                                                        -- no extra text
 vim.opt.foldcolumn = "0";                                                     -- no extra column
