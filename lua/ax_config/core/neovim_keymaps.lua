@@ -110,7 +110,7 @@ nmap(
 	"//core/modification"
 );
 
--- extensions of existing keymaps
+-- modification/extensions of existing keymaps
 map(
 	{ "n", "v" },
 	"x",
@@ -163,6 +163,12 @@ nmap(
 	"\"_C",
 	{ desc = "delete till end of line and edit without copying" },
 	"//core/extension"
+);
+nmap(
+	"Y",
+	"y$",
+	{ desc = "yank text from current character to end of line" },
+	"//core/modification"
 );
 
 -- split resizing
