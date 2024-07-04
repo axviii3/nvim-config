@@ -164,12 +164,6 @@ nmap(
 	{ desc = "delete till end of line and edit without copying" },
 	"//core/extension"
 );
-nmap(
-	"Y",
-	"y$",
-	{ desc = "yank text from current character to end of line" },
-	"//core/modification"
-);
 
 -- split resizing
 nmap(
