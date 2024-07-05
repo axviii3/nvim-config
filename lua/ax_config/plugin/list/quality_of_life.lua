@@ -10,14 +10,10 @@ return {
 		opts = {}
 	},
 
-	-- undo history in a telescope picker
+	-- undo history in a tree format
 	{
-		"debugloop/telescope-undo.nvim",
-		name = "telescope_undo",
-		dependencies = { "telescope" },
-		config = function()
-			require("telescope").load_extension("undo");
-		end
+		"mbbill/undotree",
+		name = "undotree"
 	},
 
 	-- highlighting for special commane tags

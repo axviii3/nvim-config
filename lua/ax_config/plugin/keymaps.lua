@@ -340,6 +340,14 @@ nmap(
 	"//plugin/trouble"
 );
 
+-- quality_of_life/undotree
+nmap(
+	"U",
+	"<cmd>UndotreeToggle<CR>",
+	{ desc = "toggle the undo history tree" },
+	"//plugin/undotree"
+);
+
 -- quality_of_life/todo_comment
 local todo_comments = require("todo-comments");
 
@@ -500,14 +508,6 @@ nmap(
 	"<cmd>MarkdownPreviewToggle<CR>",
 	{ desc = "toggle markdown preview for the current markdown file" },
 	"//plugin/markdown_preview"
-);
-
--- essentials/telescope + quality_of_life/undotree
-nmap(
-	"fu",
-	"<cmd>Telescope undo<CR>",
-	{ desc = "show the undo history in a telescope picker" },
-	"//plugin/telescope_undo/telescope"
 );
 
 -- essentials/telescope + quality_of_life/todo_comment
