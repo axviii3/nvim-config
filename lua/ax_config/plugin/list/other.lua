@@ -19,13 +19,7 @@ return {
 		init = function()
 			vim.g.vimwiki_ext2syntax = nil;
 			vim.g.vimwiki_global_ext = 0;
-			vim.g.vimwiki_list = {
-				{
-					path = "/var/home/axviii3/wiki",
-					syntax = "markdown",
-					ext = ".md"
-				}
-			};
+			vim.g.vimwiki_list = config_options.vimwiki_wikis;
 		end
 	},
 

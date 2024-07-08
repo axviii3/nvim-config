@@ -31,6 +31,13 @@ return {
 	initial_tab_length = 4,
 
 	-- plugin config
+	vimwiki_wikis = {
+		{
+			path = "/var/home/axviii3/documents/wiki",
+			syntax = "markdown",
+			ext = ".md"
+		}
+	},
 	lsp_setup = {
 		lua_ls = {
 			settings = {

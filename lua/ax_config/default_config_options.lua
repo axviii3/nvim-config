@@ -21,6 +21,7 @@ return {
 	initial_tab_length = 2,
 
 	-- plugin config
+	vimwiki_wikis = {},
 	lsp_setup = {
 		lua_ls = {
 			settings = {

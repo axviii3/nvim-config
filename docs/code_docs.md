@@ -1,5 +1,5 @@
 # Code Docs
-## Last updated 2-July-24
+## Last updated 8-July-24
 
 ### [init.lua](./../lua/ax_config/init.lua)
 Initiates all other configuration files and if `enable_plugins` is true then 
